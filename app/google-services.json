@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982017378072",
+    "project_id": "bankchallenge-26124",
+    "storage_bucket": "bankchallenge-26124.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982017378072:android:1e64d7f3ff1b73dbe8c06d",
+        "android_client_info": {
+          "package_name": "com.example.bankchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982017378072-gjit8a3gn8adnrrgmo71cadvrajncnp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoJURi43Qe-ekoXGi3CmjxSLTW-XekLgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982017378072-gjit8a3gn8adnrrgmo71cadvrajncnp0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

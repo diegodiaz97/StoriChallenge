@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">BankChallenge</string>
+    <string name="app_name">Bank Challenge</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Contraseña</string>
+    <string name="email_error_text">Ingresa un mail válido</string>
+    <string name="password_error_text">Debe tener al menos 8 caracteres</string>
+    <string name="need_sign_up_text">¿No tienes cuenta?</string>
+    <string name="sign_up_text">Regístrate</string>
+    <string name="welcome_text">¡Bienvenido!</string>
+    <string name="sing_in_text">Inicia sesión para estar al día con tus finanzas.</string>
+    <string name="login_text">Iniciar sesión</string>
 </resources>
