@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingHorizontal="@dimen/common_screen_horizontal_padding"
+    tools:context=".presentation.signup.view.SuccessSignUpActivity">
+
+    <ImageView
+        android:id="@+id/closeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_activity_app_logo_margin_top"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageView
+        android:id="@+id/successIconImageView"
+        android:layout_width="@dimen/success_sign_up_logo_size"
+        android:layout_height="@dimen/success_sign_up_logo_size"
+        android:layout_marginTop="@dimen/success_sign_up_logo_size"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/il_success"
+        app:layout_constraintBottom_toTopOf="@id/titleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/big_size_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/success_title_text"
+        android:layout_marginTop="@dimen/common_paragraph_margin_top"
+        app:layout_constraintBottom_toTopOf="@id/paragraphTextView"
+        app:layout_constraintTop_toBottomOf="@id/successIconImageView" />
+
+    <TextView
+        android:id="@+id/paragraphTextView"
+        style="@style/medium_size_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/success_paragraph_text"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

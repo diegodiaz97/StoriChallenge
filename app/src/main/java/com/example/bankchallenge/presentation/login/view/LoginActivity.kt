@@ -1,5 +1,7 @@
 package com.example.bankchallenge.presentation.login.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -9,7 +11,8 @@ import androidx.core.widget.addTextChangedListener
 import com.example.bankchallenge.R
 import com.example.bankchallenge.databinding.ActivityLoginBinding
 import com.example.bankchallenge.presentation.login.viewmodel.LoginViewModel
-import com.example.bankchallenge.presentation.util.extension.hideSoftKeyboard
+import com.example.bankchallenge.presentation.signup.view.SignUpActivity
+import com.example.bankchallenge.presentation.util.hideSoftKeyboard
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,7 +62,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToSignUp() {
-        Toast.makeText(this, "IR A REGISTRO", Toast.LENGTH_SHORT).show()
+        startActivity(SignUpActivity.newIntent(this))
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        finish()
     }
 
     private fun goToDashboard() {
@@ -103,5 +108,9 @@ class LoginActivity : AppCompatActivity() {
     private fun hideLoader() {
         binding.loginLoader.visibility = View.GONE
         binding.loaderBackgroundView.visibility = View.GONE
+    }
+
+    companion object {
+        fun newIntent(context: Context) = Intent(context, LoginActivity::class.java)
     }
 }

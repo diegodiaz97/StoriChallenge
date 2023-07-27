@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Bank Challenge</string>
+    <string name="name_text">Nombre</string>
+    <string name="lastname_text">Apellido</string>
     <string name="email_text">Email</string>
     <string name="password_text">Contraseña</string>
     <string name="email_error_text">Ingresa un mail válido</string>
@@ -8,5 +10,9 @@
     <string name="sign_up_text">Regístrate</string>
     <string name="welcome_text">¡Bienvenido!</string>
     <string name="sing_in_text">Inicia sesión para estar al día con tus finanzas.</string>
+    <string name="sign_up_paragraph_text">Completa los datos para crear tu usuario.</string>
     <string name="login_text">Iniciar sesión</string>
+    <string name="take_photo_text">Tomar foto de perfil</string>
+    <string name="success_title_text">¡Tu cuenta ha sido creada exitosamente!</string>
+    <string name="success_paragraph_text">Ahora puedes iniciar sesión con tu nueva cuenta.</string>
 </resources>

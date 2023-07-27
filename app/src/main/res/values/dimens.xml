@@ -10,6 +10,9 @@
     <dimen name="common_input_focused_stroke">2dp</dimen>
     <dimen name="common_input_drawable_padding">16dp</dimen>
     <dimen name="common_loader_size">120dp</dimen>
+    <dimen name="common_header_title_margin_start">12dp</dimen>
+    <dimen name="common_paragraph_margin_top">30dp</dimen>
+    <dimen name="success_sign_up_logo_size">100dp</dimen>
     <dimen name="login_activity_scroll_margin_bottom">10dp</dimen>
     <dimen name="login_activity_app_logo_size">60dp</dimen>
     <dimen name="login_activity_app_logo_margin_top">30dp</dimen>
