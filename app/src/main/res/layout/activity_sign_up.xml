@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".presentation.login.view.LoginActivity">
+    tools:context=".presentation.signup.view.SignUpActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/login_activity_scroll_margin_bottom"
         android:paddingHorizontal="@dimen/common_screen_horizontal_padding"
-        app:layout_constraintBottom_toTopOf="@id/loginButton"
+        app:layout_constraintBottom_toTopOf="@id/takePhotoButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0">
 
@@ -21,45 +21,84 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/appLogoImageView"
-                android:layout_width="@dimen/login_activity_app_logo_size"
-                android:layout_height="@dimen/login_activity_app_logo_size"
+                android:id="@+id/backImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/login_activity_app_logo_margin_top"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_logo"
-                app:layout_constraintBottom_toTopOf="@id/welcomeTextView"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/welcomeTextView"
+                android:id="@+id/headerTextView"
                 style="@style/big_size_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/welcome_text"
-                app:layout_constraintBottom_toTopOf="@id/signInTextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/appLogoImageView" />
+                android:layout_marginStart="@dimen/common_header_title_margin_start"
+                android:text="@string/sign_up_text"
+                app:layout_constraintBottom_toBottomOf="@id/backImageView"
+                app:layout_constraintStart_toEndOf="@id/backImageView"
+                app:layout_constraintTop_toTopOf="@id/backImageView" />
 
             <TextView
                 android:id="@+id/signInTextView"
                 style="@style/medium_size_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_paragraph_margin_top"
+                android:text="@string/sign_up_paragraph_text"
                 android:textColor="@color/dark_gray"
-                android:text="@string/sing_in_text"
+                app:layout_constraintBottom_toTopOf="@id/nameTextInputLayout"
+                app:layout_constraintTop_toBottomOf="@id/headerTextView" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameTextInputLayout"
+                style="@style/input_layout_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_activity_input_margin_top"
+                app:layout_constraintBottom_toTopOf="@id/lastnameTextInputLayout"
+                app:layout_constraintTop_toBottomOf="@id/signInTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    style="@style/input_field_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_user"
+                    android:hint="@string/name_text"
+                    android:imeOptions="actionNext" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastnameTextInputLayout"
+                style="@style/input_layout_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@id/emailTextInputLayout"
-                app:layout_constraintTop_toBottomOf="@id/welcomeTextView" />
+                app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastnameEditText"
+                    style="@style/input_field_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_user"
+                    android:hint="@string/lastname_text"
+                    android:imeOptions="actionNext" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailTextInputLayout"
                 style="@style/input_layout_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/login_activity_app_logo_margin_top"
                 app:layout_constraintBottom_toTopOf="@id/passwordTextInputLayout"
-                app:layout_constraintTop_toBottomOf="@id/signInTextView">
+                app:layout_constraintTop_toBottomOf="@id/lastnameTextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailEditText"
@@ -111,41 +150,15 @@
         app:lottie_rawRes="@raw/anim_loader" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginButton"
+        android:id="@+id/takePhotoButton"
         style="@style/full_button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/common_screen_horizontal_padding"
         android:layout_marginBottom="@dimen/common_button_margin_bottom"
         android:enabled="false"
-        android:text="@string/login_text"
-        app:layout_constraintBottom_toTopOf="@id/signUpLinearLayout" />
+        android:text="@string/take_photo_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="24dp" />
 
-    <LinearLayout
-        android:id="@+id/signUpLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/login_activity_sign_up_margin"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <TextView
-            android:id="@+id/needSignUpTextView"
-            style="@style/small_size_text_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/need_sign_up_text"
-            android:textColor="@color/dark_gray" />
-
-        <TextView
-            android:id="@+id/signUpTextView"
-            style="@style/small_size_text_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_button_margin_bottom"
-            android:text="@string/sign_up_text"
-            android:textColor="@color/pressed_blue"
-            android:textStyle="bold" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

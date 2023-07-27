@@ -1,4 +1,4 @@
-package com.example.bankchallenge.presentation.util.extension
+package com.example.bankchallenge.presentation.util
 
 import android.content.Context
 import android.view.View
