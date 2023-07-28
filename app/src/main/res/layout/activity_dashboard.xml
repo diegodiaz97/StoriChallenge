@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.signup.view.SuccessSignUpActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="@dimen/profile_image_size"
+        android:layout_height="@dimen/profile_image_size"
+        android:layout_margin="@dimen/header_image_margin"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/common_input_stroke"
+        android:scaleType="centerCrop"
+        android:src="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_image_style"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="@dimen/common_input_stroke" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/big_size_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/common_screen_horizontal_padding"
+        android:text="@string/your_balance_text"
+        app:layout_constraintBottom_toBottomOf="@id/profileImageView"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toTopOf="@id/profileImageView" />
+
+    <include
+        android:id="@+id/balanceView"
+        layout="@layout/card_view_balance" />
+
+    <TextView
+        android:id="@+id/movementsTextView"
+        style="@style/medium_size_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/common_screen_horizontal_padding"
+        android:text="@string/your_movements_text"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintTop_toBottomOf="@id/balanceView" />
+
+    <View
+        android:id="@+id/loaderBackgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_alpha"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:visibility="gone" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loginLoader"
+        android:layout_width="@dimen/common_loader_size"
+        android:layout_height="@dimen/common_loader_size"
+        android:adjustViewBounds="true"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anim_loader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

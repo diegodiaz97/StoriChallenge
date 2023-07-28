@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.example.bankchallenge.R
 import com.example.bankchallenge.databinding.ActivityLoginBinding
+import com.example.bankchallenge.presentation.dashboard.view.DashboardActivity
 import com.example.bankchallenge.presentation.login.viewmodel.LoginViewModel
 import com.example.bankchallenge.presentation.signup.view.SignUpActivity
 import com.example.bankchallenge.presentation.util.hideSoftKeyboard
@@ -69,7 +70,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun goToDashboard() {
         hideLoader()
-        Toast.makeText(this, "LOGIN CORRECTO", Toast.LENGTH_SHORT).show()
+        startActivity(DashboardActivity.newIntent(this))
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        finish()
     }
 
     private fun showError(errorMessage: String? = "") {

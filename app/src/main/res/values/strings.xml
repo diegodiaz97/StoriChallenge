@@ -15,4 +15,10 @@
     <string name="take_photo_text">Tomar foto de perfil</string>
     <string name="success_title_text">¡Tu cuenta ha sido creada exitosamente!</string>
     <string name="success_paragraph_text">Ahora puedes iniciar sesión con tu nueva cuenta.</string>
+    <string name="your_balance_text">Balance</string>
+    <string name="your_movements_text">Movimientos</string>
+    <string name="user_name_text">%1$s%2$s</string>
+    <string name="amount_text">$%1$d</string>
+    <string name="balance_value_text">$%1$d de $%2$d</string>
+    <string name="last_digits_text">**** **** **** %1$d</string>
 </resources>

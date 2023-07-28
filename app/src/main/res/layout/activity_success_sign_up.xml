@@ -12,7 +12,7 @@
         android:id="@+id/closeImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/login_activity_app_logo_margin_top"
+        android:layout_marginTop="@dimen/header_icon_margin_top"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
