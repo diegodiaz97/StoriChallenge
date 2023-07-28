@@ -42,11 +42,19 @@ class MovementsService @Inject constructor(private val firebase: FirebaseClient)
         withContext(Dispatchers.IO) { done.await() }
 
         return when (status) {
-            PostDelayedResponseEnum.POST_DELAYED_SUCCESS -> CoroutineResult.Success(movements)
+            PostDelayedResponseEnum.POST_DELAYED_SUCCESS -> CoroutineResult.Success(sortByDate(movements))
             PostDelayedResponseEnum.POST_DELAYED_ERROR -> CoroutineResult.Failure(error)
         }
     }
 
-    private fun movementBelongsToUser(movement: AccountMovement, email: String) =
-        movement.author == email || movement.receiver == email
+    private fun sortByDate(movements: MutableList<AccountMovement>): List<AccountMovement> {
+        return movements.sortedWith(compareBy<AccountMovement> { it.date?.get(6) }
+            .thenBy { it.date?.get(7) }.thenBy { it.date?.get(8) }.thenBy { it.date?.get(9) }
+            .thenBy { it.date?.get(3) }.thenBy { it.date?.get(4) }.thenBy { it.date?.get(0) }
+            .thenBy { it.date?.get(1) }).reversed()
+    }
+
+    private fun movementBelongsToUser(movement: AccountMovement, email: String): Boolean {
+        return movement.authorEmail == email || movement.receiverEmail == email
+    }
 }

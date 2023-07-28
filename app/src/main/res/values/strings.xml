@@ -12,13 +12,28 @@
     <string name="sing_in_text">Inicia sesión para estar al día con tus finanzas.</string>
     <string name="sign_up_paragraph_text">Completa los datos para crear tu usuario.</string>
     <string name="login_text">Iniciar sesión</string>
+
     <string name="take_photo_text">Tomar foto de perfil</string>
     <string name="success_title_text">¡Tu cuenta ha sido creada exitosamente!</string>
     <string name="success_paragraph_text">Ahora puedes iniciar sesión con tu nueva cuenta.</string>
+
     <string name="your_balance_text">Balance</string>
     <string name="your_movements_text">Movimientos</string>
     <string name="user_name_text">%1$s%2$s</string>
     <string name="amount_text">$%1$d</string>
     <string name="balance_value_text">$%1$d de $%2$d</string>
     <string name="last_digits_text">**** **** **** %1$d</string>
+    <string name="detail_email_text">Email: %1$s</string>
+    <string name="detail_name_text">Nombre: %1$s</string>
+    <string name="detail_description_text">Descripción: %1$s</string>
+    <string name="detail_code_text">Código: %1$d</string>
+    <string name="detail_date_text">Fecha: %1$s</string>
+
+    <string name="error_dialog_default_title">Algo salió mal</string>
+    <string name="error_dialog_default_body">Por favor, revisa tu conexión y vuelve a intentarlo.</string>
+    <string name="error_dialog_accept">Aceptar</string>
+    <string name="error_password_invalid">Usuario o contraseña incorrectos.</string>
+    <string name="error_network">No tienes conexión a internet.</string>
+    <string name="error_no_user_record">Usuario no encontrado.</string>
+    <string name="error_email_used">Ya existe un usuario con este mail.</string>
 </resources>

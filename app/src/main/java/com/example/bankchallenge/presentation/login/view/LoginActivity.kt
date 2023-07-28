@@ -4,13 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.example.bankchallenge.R
 import com.example.bankchallenge.databinding.ActivityLoginBinding
 import com.example.bankchallenge.presentation.dashboard.view.DashboardActivity
+import com.example.bankchallenge.presentation.dialog.ErrorDialog
 import com.example.bankchallenge.presentation.login.viewmodel.LoginViewModel
 import com.example.bankchallenge.presentation.signup.view.SignUpActivity
 import com.example.bankchallenge.presentation.util.hideSoftKeyboard
@@ -77,7 +77,11 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showError(errorMessage: String? = "") {
         hideLoader()
-        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+        val errorDialog = ErrorDialog.newInstance(messageText = errorMessage.toString())
+        supportFragmentManager.beginTransaction().add(
+            errorDialog,
+            ErrorDialog.TAG
+        ).commitAllowingStateLoss()
     }
 
     private fun onInputFieldChanged() {
