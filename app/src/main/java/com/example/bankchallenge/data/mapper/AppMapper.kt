@@ -24,6 +24,8 @@ fun DocumentSnapshot.transformToMovement() = AccountMovement(
     this.get("amount") as Long,
     this.get("author") as String,
     this.get("receiver") as String,
+    this.get("author_email") as String,
+    this.get("receiver_email") as String,
     this.get("description") as String,
     this.get("code") as Long,
     this.get("date") as String

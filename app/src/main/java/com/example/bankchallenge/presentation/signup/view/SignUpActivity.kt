@@ -20,6 +20,7 @@ import com.example.bankchallenge.databinding.ActivitySignUpBinding
 import com.example.bankchallenge.presentation.login.view.LoginActivity
 import com.example.bankchallenge.presentation.signup.viewmodel.SignUpViewModel
 import com.example.bankchallenge.domain.entity.NewUserModel
+import com.example.bankchallenge.presentation.dialog.ErrorDialog
 import com.example.bankchallenge.presentation.util.PermissionUtil
 import com.example.bankchallenge.presentation.util.hideSoftKeyboard
 import com.google.android.material.textfield.TextInputLayout
@@ -87,7 +88,11 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun showError(errorMessage: String? = "") {
         hideLoader()
-        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+        val errorDialog = ErrorDialog.newInstance(messageText = errorMessage.toString())
+        supportFragmentManager.beginTransaction().add(
+            errorDialog,
+            ErrorDialog.TAG
+        ).commitAllowingStateLoss()
     }
 
     private fun onInputFieldChanged() {

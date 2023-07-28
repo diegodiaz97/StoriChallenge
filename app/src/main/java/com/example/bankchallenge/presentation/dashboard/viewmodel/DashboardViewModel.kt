@@ -88,7 +88,8 @@ class DashboardViewModel @Inject constructor(
                     _profileState.postValue(
                         ProfileData(
                             state = ProfileState.SHOW_MOVEMENTS,
-                            movements = movementsData.data
+                            movements = movementsData.data,
+                            displayProfile = DisplayProfile(email = email)
                         )
                     )
                 }
