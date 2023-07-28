@@ -4,7 +4,6 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
@@ -15,13 +14,12 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import com.example.bankchallenge.R
 import com.example.bankchallenge.databinding.ActivitySignUpBinding
 import com.example.bankchallenge.presentation.login.view.LoginActivity
 import com.example.bankchallenge.presentation.signup.viewmodel.SignUpViewModel
-import com.example.bankchallenge.presentation.util.NewUserModel
+import com.example.bankchallenge.domain.entity.NewUserModel
 import com.example.bankchallenge.presentation.util.PermissionUtil
 import com.example.bankchallenge.presentation.util.hideSoftKeyboard
 import com.google.android.material.textfield.TextInputLayout

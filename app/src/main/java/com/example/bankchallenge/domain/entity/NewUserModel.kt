@@ -1,4 +1,4 @@
-package com.example.bankchallenge.presentation.util
+package com.example.bankchallenge.domain.entity
 
 import android.net.Uri
 

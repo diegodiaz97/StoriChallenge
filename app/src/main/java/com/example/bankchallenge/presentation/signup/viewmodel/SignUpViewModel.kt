@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.bankchallenge.domain.usecase.SignUpUseCase
 import com.example.bankchallenge.domain.util.SignUpResult
-import com.example.bankchallenge.presentation.util.NewUserModel
+import com.example.bankchallenge.domain.entity.NewUserModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

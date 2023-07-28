@@ -1,9 +1,8 @@
 package com.example.bankchallenge.data.service
 
-import android.net.Uri
+import com.example.bankchallenge.domain.entity.NewUserModel
 import com.example.bankchallenge.domain.util.LoginResult
 import com.example.bankchallenge.domain.util.SignUpResult
-import com.example.bankchallenge.presentation.util.NewUserModel
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import kotlinx.coroutines.tasks.await
@@ -40,12 +39,22 @@ class AuthenticationService @Inject constructor(private val firebase: FirebaseCl
         }
 
     private fun updatePhotoAndDisplayName(newUserModel: NewUserModel) {
-        newUserModel.imageUri.let { profileImage ->
-            val profileUpdates = userProfileChangeRequest {
-                displayName = newUserModel.name
-                photoUri = Uri.parse(profileImage.toString())
+        val filename = newUserModel.email
+        val storageRef = firebase.storage.reference
+        val imagesRef = storageRef.child("usersProfileImage/")
+        val imgRef = imagesRef.child(filename)
+
+        newUserModel.imageUri?.let {
+            imgRef.putFile(it).addOnSuccessListener {
+                imgRef.downloadUrl.addOnSuccessListener { uri ->
+                    val profileUpdates = userProfileChangeRequest {
+                        displayName = newUserModel.name
+                        photoUri = uri
+                    }
+                    firebase.auth.currentUser?.updateProfile(profileUpdates)
+                    newUserModel.imageUri = uri
+                }
             }
-            firebase.auth.currentUser?.updateProfile(profileUpdates)
         }
     }
 }
